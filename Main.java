@@ -6,10 +6,13 @@ public class Main {
     public static void main(String[] args) {
 
         int option;
-        Bank b1 = new Bank();
+        BankImpDAO bi = new BankImpDAO();
+
+        BankInf b1 = bi.getObject();
         Scanner sc = new Scanner(System.in);
 
         System.out.println("=== WELCOME! ===");
+        b1.validateAccNo();
         boolean auth = b1.auth();
         while (auth) {
             System.out.println("--------------------------------");
